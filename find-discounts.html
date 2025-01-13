@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhereToGo</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: rgb(255, 255, 255); /* Sets the background color to pink */
+            position: relative;
+        }
+        .budget-container {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centers content horizontally */
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            width: 100px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #444;
+            color: white;
+        }
+        input[type="number"]::-webkit-inner-spin-button {
+            background-color: #555; /* Style the spinner buttons */
+        }
+        a {
+            text-decoration: none;
+            padding: 15px 30px;
+            margin: 15px;
+            border: 1px solid #333;  
+            border-radius: 5px;
+            background-color: #1456a1;
+            color: rgb(255, 255, 255);
+            display: inline-block;
+            display: block; /* Makes each link a block element */
+            width: fit-content; /* Fits content width */
+        }
+        /* CSS for positioning the logo */
+        .logo {
+    display: block;
+    margin: auto;
+    max-width: 350px; /* Adjust the size of the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 20px; /* Add space from the top */
+}
+.link-container {
+            text-align: left; /* Aligns text to the left */
+            margin: 20px; /* Adds space around the container */
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo positioned in the top-right corner -->
+    <img src="ovr discounts (1)-Photoroom.png" alt="Logo" class="logo" />
+    <div class="link-container"></div>
+    <a href="contact-us.html">Contact Us</a>
+    <a href="index.html">home page</a>
+    <h1>Set Your Budget</h1>
+    <div class="budget-container">
+        <label for="minBudget">Min Budget:</label>
+        <input 
+            type="number" 
+            id="minBudget" 
+            name="minBudget" 
+            min="0" 
+            max="100" 
+            step="1" 
+            value="0"
+            oninput="validateBudget()">
+        
+        <label for="maxBudget">Max Budget:</label>
+        <input 
+            type="number" 
+            id="maxBudget" 
+            name="maxBudget" 
+            min="1" 
+            max="101" 
+            step="1" 
+            value="1"
+            oninput="validateBudget()">
+    </div>
+
+    <p id="errorMessage" style="color: red; display: none;">Max budget must be greater than Min budget.</p>
+
+    <script>
+        function validateBudget() {
+            const minBudget = parseInt(document.getElementById('minBudget').value);
+            const maxBudget = parseInt(document.getElementById('maxBudget').value);
+            const errorMessage = document.getElementById('errorMessage');
+            
+            if (minBudget >= maxBudget) {
+                errorMessage.style.display = "block";
+            } else {
+                errorMessage.style.display = "none";
+            }
+        }
+    </script>
+     
+    
+</body>
+</html>
