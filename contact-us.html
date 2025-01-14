@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -194,4 +195,202 @@ const firebaseConfig = {
 </form>
 </main>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - My Project</title>
+<style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+ 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(255, 255, 255);
+            color: #333;
+            text-align: center;
+            padding-top: 100px;
+        }
+ 
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1456a1;
+            color: white;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+ 
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+ 
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+ 
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #1f7dd4;
+        }
+ 
+        nav a:hover {
+            background-color: #0d4c91;
+        }
+ 
+        main {
+            margin-top: 150px;
+            padding: 20px;
+        }
+ 
+        form {
+            display: inline-block;
+            text-align: left;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin: 20px auto;
+        }
+ 
+        form input, form button {
+            display: block;
+            width: calc(100% - 20px);
+            margin: 10px 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+ 
+        form button {
+            background-color: #1456a1;
+            color: white;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+ 
+        form button:hover {
+            background-color: #0d4c91;
+        }
+ 
+        footer {
+            margin-top: 30px;
+        }
+</style>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+
+<script>
+       // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, push, set } from "firebase/database";
+
+// Firebase Configuration
+const firebaseConfig = {
+    // ... your Firebase config
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+// Form Submission Function
+function submitContactForm(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+    // Push data to Firebase
+    const contactsRef = ref(database, 'contacts');
+    push(contactsRef, {
+        name: name,
+        email: email
+    }).then(() => {
+        alert("Thank you for submitting your details!");
+        document.getElementById("contactForm").reset();
+    }).catch(error => {
+        alert("Error: " + error.message);
+    });
+}
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB7t1qpGk7aRM53SiIJbF79n0kfiZPLGCg",
+  authDomain: "contact-2ab39.firebaseapp.com",
+  databaseURL: "https://contact-2ab39-default-rtdb.firebaseio.com",
+  projectId: "contact-2ab39",
+  storageBucket: "contact-2ab39.firebasestorage.app",
+  messagingSenderId: "419537435059",
+  appId: "1:419537435059:web:c6d53d776d35584bdc33c6",
+  measurementId: "G-8YWH330C5S"
+};
+ 
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = firebase.database();
+ 
+        // Form Submission Function
+        function submitContactForm(event) {
+            event.preventDefault();
+ 
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+ 
+            // Push data to Firebase
+            database.ref('contacts').push({
+                name: name,
+                email: email
+            }).then(() => {
+                alert("Thank you for submitting your details!");
+                document.getElementById("contactForm").reset();
+            }).catch(error => {
+                alert("Error: " + error.message);
+            });
+        }
+</script>
+</head>
+<body>
+<!-- Header Section -->
+<header>
+<img src="ovras(1).png" alt="Logo" class="logo">
+<nav>
+<a href="foods.html">Foods</a>
+<a href="index.html">Home</a>
+</nav>
+</header>
+ 
+    <!-- Main Content -->
+<main>
+<h1>Contact Us</h1>
+<form id="contactForm" onsubmit="submitContactForm(event)">
+<input type="text" id="name" name="name" placeholder="Your Name" required>
+<input type="email" id="email" name="email" placeholder="Your Email" required>
+<button type="submit">Submit</button>
+</form>
+</main>
+</body>
+>>>>>>> 26bb81e62f95b3dfa0f4b3a2604f136ce1429af3
 </html>
