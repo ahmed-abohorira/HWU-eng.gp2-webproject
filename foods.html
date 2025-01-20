@@ -2,32 +2,109 @@
 <html lang="en">
 <head>
   <style> 
-  .link-container {
-            text-align: right; /* Aligns text to the left */
-            margin: 20px; /* Adds space around the container */
+         /* Basic Reset */
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    body { 
-        font-family: Arial, sans-serif; 
-        text-align: center; 
-        margin-top: 100px; 
-        background-color: rgb(255, 255, 255); /* Changed the background color to black */
-    } 
-    a { 
-        text-decoration: none; 
-        padding: 15px 30px; 
-        margin: 15px; 
-        border: 1px solid #333;  
-        border-radius: 5px; 
-        background-color: #1456a1; 
-        color: rgb(255, 255, 255); 
-    } 
-    .logo {
-        display: block;
-        margin: auto;
-        max-width: 250px; /* Adjust the size of the logo */
-        height: auto; /* Maintain aspect ratio */
-        margin-top: 0px; /* Add space from the top */
-    }
+ 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(255, 255, 255);
+            color: #333;
+            text-align: center;
+            padding-top: 100px;
+        }
+ 
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1456a1;
+            color: white;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+ 
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+ 
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+ 
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #1f7dd4;
+        }
+ 
+        nav a:hover {
+            background-color: #0d4c91;
+        }
+ 
+        main {
+            margin-top: 150px;
+            padding: 20px;
+        }
+ 
+        form {
+            display: inline-block;
+            text-align: left;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin: 20px auto;
+        }
+ 
+        form input, form button, form textarea {
+            display: block;
+            width: calc(100% - 20px);
+            margin: 10px 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+ 
+        form button {
+            background-color: #1456a1;
+            color: white;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+ 
+        form button:hover {
+            background-color: #0d4c91;
+        }
+ 
+        #successMessage {
+            display: none;
+            margin-top: 20px;
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+        }
+ 
+        footer {
+            margin-top: 30px;
+        }
 </style> 
   <header class="top-header">
     <img src="ovras.png" alt="Logo" class="logo" />
@@ -251,7 +328,13 @@
         </div>
       </div>
     </main>
-    
+    <header>
+      <img src="ovras(1).png" alt="Logo" class="logo">
+      <nav>
+      <a href="foods.html">Foods</a>
+      <a href="index.html">Home</a>
+      </nav>
+      </header>
 </body>
 </html>
 .
